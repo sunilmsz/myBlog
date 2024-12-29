@@ -1,12 +1,21 @@
 import React from 'react';
-import HomePage from './pages/HomePage';
+import { BrowserRouter as Router,Routes, Route } from "react-router";
 
+import HomePage from './pages/HomePage';
+import MainLayout from './layout/MainLayout';
 function App() {
 
 
   return (
     <div style={{minHeight:'100vh'}}>
-      <HomePage />
+      <Router> 
+      <Routes>
+        <Route path='/' element={<MainLayout />} >
+        <Route index element={<HomePage />} />
+        <Route path="/about" element={<HomePage />} />
+        </Route>
+      </Routes>
+      </Router>
     </div>
     
   )
