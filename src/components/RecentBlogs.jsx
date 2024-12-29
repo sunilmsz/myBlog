@@ -1,4 +1,5 @@
 
+import { useNavigate } from 'react-router-dom';
 
 import {  Flex } from 'antd';
 import MyCard from './MyCard';
@@ -47,7 +48,11 @@ const categories = [
   ];
 
 const RecentBlogs = () => {
-
+    const navigate = useNavigate();
+    const handleCardClick = (id) => {
+        navigate(`/blog/${id}`);
+      };
+    
 
     return (
   <div style={{marginBlock:"40px",marginInline:'20px'}}>
@@ -60,7 +65,10 @@ const RecentBlogs = () => {
         length: 10,
       },
       (_, i) => (
-        <MyCard key={i} title={categories[i].name} description={categories[i].description} />
+        <div onClick={() => handleCardClick(i)}  key={i}>
+            <MyCard  title={categories[i].name} description={categories[i].description} />
+
+        </div>
       ),
     )}
   </Flex>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router,Routes, Route } from "react-router";
 
 import HomePage from './pages/HomePage';
 import MainLayout from './layout/MainLayout';
+import Blog from './pages/Blog';
 function App() {
 
 
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<MainLayout />} >
         <Route index element={<HomePage />} />
         <Route path="/about" element={<HomePage />} />
+        <Route path='/blog/:id' element = {<Blog />} /> 
         </Route>
       </Routes>
       </Router>

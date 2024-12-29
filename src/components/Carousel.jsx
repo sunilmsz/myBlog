@@ -20,7 +20,7 @@ const MyCarousel = () => {
     <Carousel afterChange={onChange}>
         {items.map((value,index)=>(
                   <div key={index}>
-                  <img src={`https://picsum.photos/id/${value}/900/500`}  style={contentStyle} />
+                  <img src={`https://picsum.photos/id/${value}/500/400`}  style={contentStyle} />
                 </div>
         ))}
 
