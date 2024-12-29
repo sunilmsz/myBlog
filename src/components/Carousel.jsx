@@ -1,5 +1,9 @@
 import React from 'react';
 import { Carousel } from 'antd';
+import c1 from '../images/c1.jpg'
+import c2 from '../images/c2.jpg'
+import c3 from '../images/c3.jpg'
+import c4 from '../images/c4.jpg'
 const contentStyle = {
   width: '100%',
   height:'auto',
@@ -10,7 +14,7 @@ const contentStyle = {
   objectFit:'cover'
 };
 
-const items = [1,2,3,4]
+const items = [c1,c2,c3,c4]
 
 const MyCarousel = () => {
   const onChange = (currentSlide) => {
@@ -20,12 +24,12 @@ const MyCarousel = () => {
     <Carousel afterChange={onChange}>
         {items.map((value,index)=>(
                   <div key={index}>
-                  <img src={`https://picsum.photos/id/${value}/500/400`}  style={contentStyle} />
+                  <img src={items[index]}  style={contentStyle} />
                 </div>
         ))}
 
 
     </Carousel>
   );
-};
+};  
 export default MyCarousel;
